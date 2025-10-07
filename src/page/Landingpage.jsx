@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
-import logo from "../assets/bimfroxb.png"
+import logo from "../assets/bimfroxb.png";
 
-const PHONE_NUMBER = "9184018 09966"; // Bimfrox WhatsApp number
-const DEFAULT_MESSAGE = "Hello Bimfrox Team! I scanned your QR and would like to connect.";
+const PHONE_NUMBER = "918401809966"; // Bimfrox WhatsApp number
+const DEFAULT_MESSAGE =
+  "Hello Bimfrox Team! I scanned your QR and would like to connect *'एक वेबसाइट मुझे भी चाहिए'*";
 
 function getQueryParams() {
   if (typeof window === "undefined") return {};
@@ -35,21 +36,27 @@ const Landingpage = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-green-50 to-white p-6">
       <div className="bg-white shadow-2xl rounded-3xl p-8 text-center max-w-md w-full border border-green-100">
-        
         {/* Bimfrox Logo */}
         <div className="flex justify-center mb-6">
           <img
-            src={logo} // Replace with your real logo path
+            src={logo}
             alt="Bimfrox Logo"
             className="w-28 h-28 object-contain"
           />
         </div>
 
         {/* Heading */}
-        <h1 className="text-3xl font-bold text-green-700 mb-2">Welcome to Bimfrox</h1>
+        <h1 className="text-3xl font-bold text-green-700 mb-2">
+          Welcome to Bimfrox
+        </h1>
         <p className="text-gray-600 mb-6">
           Thank you for scanning our QR code! Tap below to chat with our team on WhatsApp.
         </p>
+
+        {/* Highlight Hindi Message */}
+        <div className="text-xl font-bold text-green-700 mb-6">
+          “एक वेबसाइट मुझे भी चाहिए”
+        </div>
 
         {/* WhatsApp Button */}
         <a
@@ -75,13 +82,21 @@ const Landingpage = () => {
             <span className="font-medium">Phone:</span> {phone || PHONE_NUMBER}
           </p>
           <p className="mt-1">
-            <span className="font-medium">Message:</span> {msg || DEFAULT_MESSAGE}
+            <span className="font-medium">Message:</span>{" "}
+            {msg || "Hello Bimfrox Team! I scanned your QR and would like to connect "}
+            <span className="font-bold text-green-700">
+              “एक वेबसाइट मुझे भी चाहिए”
+            </span>
           </p>
         </div>
 
         {/* Footer */}
         <div className="mt-6 flex items-center justify-center gap-3 text-sm text-gray-400">
-          <a href="https://www.bimfrox.com/" target="_blank"  className="underline hover:text-green-600 transition">
+          <a
+            href="https://www.bimfrox.com/"
+            target="_blank"
+            className="underline hover:text-green-600 transition"
+          >
             Visit Bimfrox Website
           </a>
           <a href={waUrl} className="underline hover:text-green-600 transition">
